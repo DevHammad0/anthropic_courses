@@ -15,7 +15,7 @@ MCP Chat is a command-line interface application that enables interactive chat c
 
 ```
 GEMINI_API_KEY=""  # Enter your Google Gemini API key
-GEMINI_MODEL="gemini-1.5-flash"  # Specify the Gemini model to use
+GEMINI_MODEL="gemini-2.5-pro"  # Specify the Gemini model to use
 USE_UV=1  # Optional: Use UV for MCP server execution
 ```
 
