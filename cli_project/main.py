@@ -1,8 +1,16 @@
 import asyncio
 import sys
 import os
+import warnings
 from dotenv import load_dotenv
 from contextlib import AsyncExitStack
+
+# Suppress Windows-specific asyncio warnings
+if sys.platform == "win32":
+    # Set environment variable to suppress these specific warnings
+    os.environ["PYTHONWARNINGS"] = "ignore::ResourceWarning"
+    # Also filter through warnings module
+    warnings.filterwarnings("ignore", category=ResourceWarning)
 
 from mcp_client import MCPClient
 # Replace Anthropic/Claude with Google Gemini
@@ -76,7 +84,14 @@ async def main():
 
         cli = CliApp(chat)
         await cli.initialize()
-        await cli.run()
+        try:
+            await cli.run()
+        except KeyboardInterrupt:
+            print("\nShutting down gracefully...")
+        finally:
+            # Give subprocess transports time to clean up on Windows
+            if sys.platform == "win32":
+                await asyncio.sleep(0.1)
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 from typing import List, Tuple, Literal, cast
 from mcp.types import Prompt, PromptMessage
-from anthropic.types import MessageParam
+from anthropic.types import MessageParam # type: ignore
 
 from core.chat import Chat, AIService
 from mcp_client import MCPClient

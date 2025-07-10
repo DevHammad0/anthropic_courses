@@ -103,6 +103,24 @@ Use the / prefix to execute commands defined in the MCP server:
 
 Commands will auto-complete when you press Tab.
 
+## Troubleshooting
+
+### Windows: Subprocess Cleanup Warnings
+
+If you see `ResourceWarning` or `unclosed transport` warnings on Windows, you can suppress them by setting an environment variable before running:
+
+**PowerShell:**
+```powershell
+$env:PYTHONWARNINGS="ignore::ResourceWarning"; uv run main.py
+```
+
+**Command Prompt:**
+```cmd
+set PYTHONWARNINGS=ignore::ResourceWarning && uv run main.py
+```
+
+These warnings don't affect functionality - they're just cleanup noise from Windows asyncio subprocess handling.
+
 ## Available Gemini Models
 
 You can configure different Gemini models in your `.env` file:
