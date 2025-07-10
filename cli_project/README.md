@@ -147,6 +147,3 @@ To fully implement the MCP features:
 
 The application uses a generic `AIService` protocol, making it easy to switch between different AI providers. The current implementation uses Google Gemini, but you can extend it to support other providers by implementing the `AIService` protocol.
 
-### Linting and Typing Check
-
-There are no lint or type checks implemented.
