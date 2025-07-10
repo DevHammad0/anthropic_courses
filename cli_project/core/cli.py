@@ -98,14 +98,12 @@ class UnifiedCompleter(Completer):
             if len(parts) >= 2:
                 doc_prefix = parts[-1]
 
-                for resource in self.resources:
-                    if "id" in resource and resource["id"].lower().startswith(
-                        doc_prefix.lower()
-                    ):
+                for resource_id in self.resources:
+                    if resource_id.lower().startswith(doc_prefix.lower()):
                         yield Completion(
-                            resource["id"],
+                            resource_id,
                             start_position=-len(doc_prefix),
-                            display=resource["id"],
+                            display=resource_id,
                         )
                 return
 
@@ -113,8 +111,8 @@ class UnifiedCompleter(Completer):
 class CliApp:
     def __init__(self, agent: CliChat):
         self.agent = agent
-        self.resources = []
-        self.prompts = []
+        self.resources: list[dict] = []
+        self.prompts: list = []
 
         self.completer = UnifiedCompleter()
 
@@ -159,8 +157,8 @@ class CliApp:
                     ):
                         buffer.start_completion(select_first=False)
 
-        self.history = InMemoryHistory()
-        self.session = PromptSession(
+        self.history: InMemoryHistory = InMemoryHistory()
+        self.session: PromptSession = PromptSession(
             completer=self.completer,
             history=self.history,
             key_bindings=self.kb,
