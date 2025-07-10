@@ -6,4 +6,4 @@ This `cli_project` is for the [Anthropic Model Context Protocol course](https://
 
 Now you can complete the course exercises **without buying Anthropic credits** - just use the free Gemini API!
 
-📖 **Setup instructions are in the [cli_project directory](cli_project/README.md)**
+📖 **Setup instructions are in the [cli_project directory](cli_project)**
