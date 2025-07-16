@@ -8,7 +8,7 @@ MCP clients and servers communicate by exchanging JSON messages, but how do thes
 
 When you're first developing an MCP server or client, the most commonly used transport is the **stdio transport**. This approach is straightforward: the client launches the MCP server as a subprocess and communicates through standard input and output streams.
 
-<img src="image1.png" alt="image1" width=800> 
+<img src="images/image1.png" alt="image1" width=800> 
 
 ### Here's how it works:
 - Client sends messages to the server using the server's **stdin**
@@ -36,7 +36,7 @@ The terminal output shows the complete message exchange, including example messa
 
 Every MCP connection must start with a specific three-message handshake:
 
-<img src="image2.png" alt="image2" width=800> 
+<img src="images/image2.png" alt="image2" width=800> 
 
 1. **Initialize Request** - Client sends this first
 2. **Initialize Result** - Server responds with capabilities
@@ -50,7 +50,7 @@ Only after this handshake can you send other requests like tool calls or prompt 
 
 MCP supports various message types that flow in both directions:
 
-<img src="image3.png" alt="image3" width=800> 
+<img src="images/image3.png" alt="image3" width=800> 
 
 * **Requests** → **Results**
 * **Notifications** (no response expected)
@@ -63,7 +63,7 @@ The key insight is that some messages require responses (requests → results) w
 
 With any transport, you need to handle four different communication patterns:
 
-<img src="image4.png" alt="image4" width=800> 
+<img src="images/image4.png" alt="image4" width=800> 
 
 1. **Client → Server request**: Client writes to stdin
 2. **Server → Client response**: Server writes to stdout

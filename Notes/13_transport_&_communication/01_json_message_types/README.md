@@ -6,11 +6,11 @@ MCP (Model Context Protocol) uses JSON messages to handle communication between 
 
 All MCP communication happens through JSON messages. Each message type serves a specific purpose - whether it's calling a tool, listing available resources, or sending notifications about system events.
 
-<img src="image1.png" alt="image1" width=800> 
+<img src="images/image1.png" alt="image1" width=800> 
 
 Here's a typical example: when Claude needs to call a tool provided by an MCP server, the client sends a "Call Tool Request" message. The server processes this request, runs the tool, and responds with a "Call Tool Result" message containing the output.
 
-<img src="image2.png" alt="image2" width=800> 
+<img src="images/image2.png" alt="image2" width=800> 
 
 ### MCP Specification
 
@@ -22,7 +22,7 @@ The message types are written in TypeScript for convenience - not because they'r
 
 MCP messages fall into two main categories:
 
-<img src="image3.png" alt="image3" width=800> 
+<img src="images/image3.png" alt="image3" width=800> 
 
 #### Request-Result Messages
 

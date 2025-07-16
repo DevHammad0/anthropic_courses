@@ -6,7 +6,7 @@
 
 Think of MCP as a way to **offload the burden of defining and executing tools** from your server to specialized **MCP servers**.
 
-<img src="image1.png" alt="image1" width=700 >
+<img src="images/image1.png" alt="image1" width=700 >
 
 
 ## 🏗️ Architecture Overview
@@ -30,7 +30,7 @@ Example query:
 
 To answer this, Claude needs access to **GitHub’s API**.
 
-<img src="image2.png" alt="image2" width=700 >
+<img src="images/image2.png" alt="image2" width=700 >
 
 
 ### Without MCP:
@@ -43,7 +43,7 @@ To answer this, Claude needs access to **GitHub’s API**.
   * Projects
     ...and more.
 
-<img src="image3.png" alt="image3" width=700 >  
+<img src="images/image3.png" alt="image3" width=700 >  
 
 
 * This means **writing, testing, and maintaining** all of it.
@@ -63,7 +63,7 @@ Instead:
 * Your server simply **connects to that MCP Server**.
 * The **heavy lifting is already done** by the MCP Server implementer.
 
-<img src="image4.png" alt="image4" width=700 >
+<img src="images/image4.png" alt="image4" width=700 >
 
 ---
 
@@ -77,7 +77,7 @@ MCP Servers provide:
 
 They act as **standardized interfaces** to outside services.
 
-<img src="image5.png" alt="image5" width=700 >
+<img src="images/image5.png" alt="image5" width=700 >
 
 ### 🔧 Example:
 

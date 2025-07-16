@@ -2,7 +2,7 @@
 
 Prompts in MCP servers let you define pre-built, high-quality instructions that clients can use instead of writing their own prompts from scratch. Think of them as carefully crafted templates that give better results than what users might come up with on their own.
 
-<img src="image1.png" alt="image1" width=700>  
+<img src="images/image1.png" alt="image1" width=700>  
 
 ## Why Use Prompts?
 
@@ -10,7 +10,7 @@ Here's the key insight: users can already ask Claude to do most tasks directly. 
 
 As the MCP server author, you can spend time crafting, testing, and evaluating prompts that work consistently across different scenarios. Users benefit from this expertise without having to become prompt engineering experts themselves.
 
-<img src="image2.png" alt="image2" width=700>  
+<img src="images/image2.png" alt="image2" width=700>  
 
 ## Building a Format Command
 
@@ -58,7 +58,7 @@ The function returns a list of messages that get sent directly to Claude. You ca
 
 Use the MCP Inspector to test your prompts before deploying them:
 
-<img src="image3.png" alt="image3" width=700>  
+<img src="images/image3.png" alt="image3" width=700>  
 
 The inspector shows you exactly what messages will be sent to Claude, including how variables get interpolated into your prompt template. This lets you verify the prompt looks correct before users start relying on it.
 

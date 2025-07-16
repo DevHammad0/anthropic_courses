@@ -10,7 +10,7 @@ The **MCP client** serves as the communication bridge between your server and MC
 
 One of MCP's key strengths is being **transport agnostic** – a fancy way of saying the client and server can communicate over different protocols depending on your setup.
 
-<img src="image1.png" alt="image1" width=700>
+<img src="images/image1.png" alt="image1" width=700>
 
 The most common setup runs both the MCP client and server on the same machine, communicating through **standard input/output**.
 But you can also connect them over:
@@ -19,18 +19,18 @@ But you can also connect them over:
 * WebSockets
 * Various other network protocols
 
-<img src="image2.png" alt="image2" width=700>
+<img src="images/image2.png" alt="image2" width=700>
 
 ## 📨 MCP Message Types
 
 Once connected, the client and server exchange **specific message types** defined in the MCP specification. The main ones you'll work with are:
 
-<img src="image3.png" alt="image3" width=700>  
+<img src="images/image3.png" alt="image3" width=700>  
 
 * **ListToolsRequest / ListToolsResult**
   → The client asks the server *"what tools do you provide?"* and gets back a list of available tools.
 
-  <img src="image4.png" alt="image4" width=700>
+  <img src="images/image4.png" alt="image4" width=700>
 
 * **CallToolRequest / CallToolResult**
   → The client asks the server to run a specific tool with given arguments, then receives the results.
@@ -60,7 +60,7 @@ Here’s the step-by-step flow:
 11. **Final Response**: Claude formulates a final answer using the repository data
 12. **User Gets Answer**: Your server delivers Claude's response back to the user
 
-<img src="image5.png" alt="image5" width=700>
+<img src="images/image5.png" alt="image5" width=700>
 
 Yes, this flow involves many steps, but each component has a clear responsibility.
 The **MCP client abstracts away** the complexity of server communication, letting you focus on your **application logic** while still getting access to **powerful external tools and data sources**.

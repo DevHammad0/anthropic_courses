@@ -8,14 +8,14 @@ Now that we have our MCP server working, it's time to build the client side. The
 
 In most real-world projects, you'll either implement an MCP client or an MCP server - not both. We're building both in this project just so you can see how they work together.
 
-<img src="image1.png" alt="image1" width=700>
+<img src="images/image1.png" alt="image1" width=700>
 
 The MCP client consists of two main components:
 
 * **MCP Client** - A custom class we create to make using the session easier
 * **Client Session** - The actual connection to the server (part of the MCP Python SDK)
 
-<img src="image2.png" alt="image2" width=700>
+<img src="images/image2.png" alt="image2" width=700>
 
 The client session requires careful resource management - we need to properly clean up connections when we're done. That's why we wrap it in our own class that handles all the cleanup automatically.
 
@@ -25,7 +25,7 @@ The client session requires careful resource management - we need to properly cl
 
 Remember our application flow diagram? The client is what enables our code to interact with the MCP server at two key points:
 
-<img src="image3.png" alt="image3" width=700>
+<img src="images/image3.png" alt="image3" width=700>
 
 Our CLI code uses the client to:
 

@@ -11,21 +11,21 @@ Let's say you want to build a **document mention** feature where users can type 
 * Getting a list of all available documents (for autocomplete)
 * Fetching the contents of a specific document (when mentioned)  
 
-<img src="image1.png" alt="image1" width=700>  
+<img src="images/image1.png" alt="image1" width=700>  
 
 When a user mentions a document, your system automatically **injects the document's contents into the prompt** sent to Claude, eliminating the need for Claude to use tools to fetch the information.
 
-<img src="image2.png" alt="image2" width=700>  
+<img src="images/image2.png" alt="image2" width=700>  
 
 ## ⚙️ How Resources Work
 
 Resources follow a **request-response** pattern. When your client needs data, it sends a `ReadResourceRequest` with a URI to identify which resource it wants. The MCP server processes this request and returns the data in a `ReadResourceResult`.
 
-<img src="image3.png" alt="image3" width=700>  
+<img src="images/image3.png" alt="image3" width=700>  
 
 The flow looks like this: your code requests a resource from the MCP client, which forwards the request to the MCP server. The server processes the URI, runs the appropriate function, and returns the result.
 
-<img src="image4.png" alt="image4" width=700>  
+<img src="images/image4.png" alt="image4" width=700>  
 
 ## 📂 Types of Resources
 
@@ -61,7 +61,7 @@ def fetch_doc(doc_id: str) -> str:
     return docs[doc_id]
 ```
 
-<img src="image5.png" alt="image5" width=700>  
+<img src="images/image5.png" alt="image5" width=700>  
 
 ## 🧾 Implementation Details
 
@@ -88,7 +88,7 @@ Then connect to the inspector in your browser. You'll see two sections:
 * **Resources** – Lists your direct/static resources
 * **Resource Templates** – Lists your templated resources
 
-<img src="image6.png" alt="image6" width=700>  
+<img src="images/image6.png" alt="image6" width=700>  
 
 Click on any resource to test it. For templated resources, you'll need to provide values for the parameters. The inspector shows you the exact response structure your client will receive, including the **MIME type** and **serialized data**.
 

@@ -10,7 +10,7 @@ Some MCP features like sampling, notifications, and logging rely on the server i
 
 The magic happens through a multi-step process that establishes persistent connections between client and server.
 
-<img src="image1.png" alt="image1" width=800> 
+<img src="images/image1.png" alt="image1" width=800> 
 
 ### Initial Connection Setup
 
@@ -28,7 +28,7 @@ This session ID is crucial - it uniquely identifies the client and must be inclu
 
 After initialization, the client can make a `GET` request to establish a **Server-Sent Events** connection. This creates a long-lived HTTP response that the server can use to stream messages back to the client at any time.
 
-<img src="image2.png" alt="image2" width=800> 
+<img src="images/image2.png" alt="image2" width=800> 
 
 This SSE connection is the key to allowing server-to-client communication. The server can now send requests, notifications, and other messages through this persistent channel.
 
@@ -38,7 +38,7 @@ This SSE connection is the key to allowing server-to-client communication. The s
 
 When the client makes a tool call, things get more complex. The system creates two separate SSE connections:
 
-<img src="image3.png" alt="image3" width=800> 
+<img src="images/image3.png" alt="image3" width=800> 
 
 * **Primary SSE Connection**: Used for server-initiated requests and stays open indefinitely
 * **Tool-Specific SSE Connection**: Created for each tool call and closes automatically when the tool result is sent
@@ -52,7 +52,7 @@ Different types of messages get routed through different connections:
 * **Progress notifications**: Sent through the primary SSE connection
 * **Logging messages and tool results**: Sent through the tool-specific SSE connection
 
-<img src="image4.png" alt="image4" width=800> 
+<img src="images/image4.png" alt="image4" width=800> 
 
 ## Configuration Flags That Break the Workaround
 

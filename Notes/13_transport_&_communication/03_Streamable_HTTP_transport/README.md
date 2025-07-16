@@ -2,11 +2,11 @@
 
 The streamable HTTP transport enables MCP clients to connect to remotely hosted servers over HTTP connections. Unlike the standard I/O transport that requires both client and server on the same machine, this transport opens up possibilities for public MCP servers that anyone can access.
 
-<img src="image1.png" alt="image1" width=800> 
+<img src="images/image1.png" alt="image1" width=800> 
 
 However, there's an important caveat: some configuration settings can significantly limit your MCP server's functionality. If your application works perfectly with standard I/O transport locally but breaks when deployed with HTTP transport, this is likely the culprit.
 
-<img src="image2.png" alt="image2" width=800> 
+<img src="images/image2.png" alt="image2" width=800> 
 
 ## Configuration Settings That Matter
 
@@ -23,14 +23,14 @@ By default, both settings are `false`, but certain deployment scenarios may forc
 
 To understand why these limitations exist, we need to review how HTTP communication works. In standard HTTP:
 
-<img src="image3.png" alt="image3" width=800> 
+<img src="images/image3.png" alt="image3" width=800> 
 
 - Clients can easily initiate requests to servers (the server has a known URL)  
 - Servers can easily respond to these requests  
 - Servers cannot easily initiate requests to clients (clients don't have known URLs)  
 - Response patterns from client back to server become problematic  
 
-<img src="image4.png" alt="image4" width=800> 
+<img src="images/image4.png" alt="image4" width=800> 
 
 ## MCP Message Types Affected
 
@@ -54,7 +54,7 @@ These are exactly the features that break when you enable the restrictive HTTP s
 
 The streamable HTTP transport does provide a clever solution to work around HTTP's limitations, but it comes with trade-offs. When you're forced to use `stateless_http=True` or `json_response=True`, you're essentially telling the transport to operate within HTTP's constraints rather than working around them.
 
-<img src="image5.png" alt="image5" width=800> 
+<img src="images/image5.png" alt="image5" width=800> 
 
 ## Conclusion
 
