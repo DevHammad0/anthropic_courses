@@ -18,7 +18,7 @@ Imagine you have an MCP server with a research tool that fetches information fro
 
 ### 🟡 Option 1: Server Calls Claude Directly
 
-<img src="option_1.png">
+<img src="option_1.png" alt="option_1_diagram" width="700">
 
 * The server gets direct access to Claude.
 * Needs its own API key.
@@ -28,7 +28,7 @@ Imagine you have an MCP server with a research tool that fetches information fro
 
 ### 🟢 Option 2: Use Sampling (Recommended)
 
-<img src="option_2.png">
+<img src="option_2.png" alt="option_2_diagram" width=700>
 
 * Server generates a prompt and asks the **client**:
   *"Could you call Claude for me?"*

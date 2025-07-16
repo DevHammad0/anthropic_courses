@@ -4,12 +4,12 @@ Roots are a way to grant MCP servers access to specific files and folders on you
 ## The Problem Roots Solve
 Without roots, you'd run into a common issue. Imagine you have an MCP server with a video conversion tool that takes a file path and converts an MP4 to MOV format.
 
-<img src="image1.png">
+<img src="image1.png" alt="image_1" width="700" >
 
 
 When a user asks Claude to "convert biking.mp4 to mov format", Claude would call the tool with just the filename. But here's the problem - Claude has no way to search through your entire file system to find where that file actually lives.
 
-<img src="image2.png">
+<img src="image2.png" alt="image_2" width="700" >
 
 Your file system might be complex with files scattered across different directories. The user knows the biking.mp4 file is in their Movies folder, but Claude doesn't have that context.
 
